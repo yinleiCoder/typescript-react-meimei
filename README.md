@@ -15,9 +15,12 @@
 
 - TypeScript作为爬虫、Express为后端
 - React作为前端展示
+- OAuth授权登录
 
 未来还可能加入GitHub Actions 进行CI/CD。也可能使用腾讯云的serveless云服务等。
 
+说明：
+- typescript-express是后端+爬虫。启动命令是进入该文件夹并yarn dev，就会并行执行tsc-w和nodemon.这会产生冲突，所以package.json里配置了nodemonConfig。
 
 
 如果您对这个项目感兴趣，请为我点个star，感谢！:thermometer:
