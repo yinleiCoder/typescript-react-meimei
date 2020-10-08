@@ -5,6 +5,9 @@ import { getResponseData } from '../utils/util';
 import fs from 'fs';
 import path from 'path';
 
+import Crowller from '../utils/crollwer';
+import Analyzer from '../utils/analyzer';
+
 interface BodyRequest extends Request {
     body: {
         [key: string]: string | undefined;
@@ -26,8 +29,11 @@ const checkLogin = (req: Request, res: Response, next: NextFunction) => {
 class CrowllerController {
     
     @get('/api/getData') 
-    @use(checkLogin)
+    // @use(checkLogin)
     getData(req: BodyRequest, res: Response) {
+        const url = `https://www.tupianzj.com/meinv/yishu/list_178_1.html` // 要爬取网站的URL
+        const analyzer = Analyzer.getInstance();
+        new Crowller(url, analyzer);
         res.json(getResponseData<boolean>(true));
     }
 
