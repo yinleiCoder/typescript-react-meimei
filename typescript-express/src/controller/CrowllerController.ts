@@ -14,6 +14,19 @@ interface BodyRequest extends Request {
     }
 }
 
+interface MeiMei {
+    title: string;
+    img: string;
+}
+interface Content {
+    currentPage: number; // 当前页码
+    currentPageItemsLength: number; // 当前页的条数
+    totalPages: number; // 总共页码
+    totalPagesItemsLength: number; // 总共条数
+    [propName: number]: MeiMei[];
+}
+
+
 // 中间件
 const checkLogin = (req: Request, res: Response, next: NextFunction) => {
     const isLogin = req.session ? req.session.login : undefined;
@@ -41,15 +54,16 @@ class CrowllerController {
         res.json(getResponseData<boolean>(true));
     }
 
-    @get('/')
-    test(req: BodyRequest, res: Response) {
-        res.send(`
-        <html>
-            <body>
-                test
-            </body>
-        </html>
-    `);
+    @get('/api/showData')
+    // @use(checkLogin)
+    showData(req: BodyRequest, res: Response) {
+        try {
+            const position = path.resolve(__dirname, '../../data/meimei.json');
+            const result = fs.readFileSync(position, 'utf-8');
+            res.json(getResponseData<Content>(JSON.parse(result)));
+        } catch (e) {
+            res.json(getResponseData<boolean>(false, '数据不存在'));
+        }
     }
 
 }
