@@ -1,6 +1,9 @@
 import express, { Request, Response, NextFunction } from 'express';
 import bodyParser from 'body-parser';
 import cookieSession from 'cookie-session';
+import router from './router';
+import './controller/CrowllerController';
+
 
 // express 作为后端
 const app = express();
@@ -9,6 +12,7 @@ const app = express();
 app.use(bodyParser.urlencoded({extended: false}));
 app.use((req: Request, res: Response, next: NextFunction) => {
     req.personName = 'yinlei';
+    next();
 });
 
 // 使用cookie-session
@@ -19,7 +23,7 @@ app.use(cookieSession({
 }));
 
 // 自定义路由模块
-// app.use(router); 
+app.use(router); 
 
 const port = 7001;
 app.listen(7001, ()=> {
