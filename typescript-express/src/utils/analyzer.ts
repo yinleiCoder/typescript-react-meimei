@@ -87,8 +87,6 @@ class Analyzer implements MyAnalyer {
         return JSON.stringify(fileContent, null, 2);
     }
 
-    
-
 }
 
 export default Analyzer;

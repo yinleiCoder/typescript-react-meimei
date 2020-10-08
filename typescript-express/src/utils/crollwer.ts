@@ -19,12 +19,17 @@ class Crowller {
     private async initSpiderProcess() {
         const html = await this.getRawHtml();
         const fileContent = this.analyzer.analyze(html, this.filePath);
-        
+        // console.log(fileContent)
+        this.writeFile(fileContent);
     }
 
     private async getRawHtml() {
         const result = await superagent.get(this.url);
         return result.text;
+    }
+
+    private writeFile(content: string) {
+        fs.writeFileSync(this.filePath, content);
     }
 
 }

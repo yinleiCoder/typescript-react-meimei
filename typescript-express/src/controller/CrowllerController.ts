@@ -31,7 +31,11 @@ class CrowllerController {
     @get('/api/getData') 
     // @use(checkLogin)
     getData(req: BodyRequest, res: Response) {
-        const url = `https://www.tupianzj.com/meinv/yishu/list_178_1.html` // 要爬取网站的URL
+        // const currentCrowllerPageIndex = req.session ? req.session.currentCrowllerPageIndex : undefined;
+        // if(!currentCrowllerPageIndex) {
+        //     req.session.currentCrowllerPageIndex = 1;
+        // }
+        const url = `https://www.tupianzj.com/meinv/yishu/list_178_${1}.html` // 要爬取网站的URL
         const analyzer = Analyzer.getInstance();
         new Crowller(url, analyzer);
         res.json(getResponseData<boolean>(true));
