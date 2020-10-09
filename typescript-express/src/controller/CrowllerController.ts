@@ -32,7 +32,7 @@ const checkLogin = (req: Request, res: Response, next: NextFunction) => {
     const isLogin = req.session ? req.session.login : undefined;
     if (isLogin) {
         next();
-    } else {
+    } else { // undefined or false
         res.json(getResponseData(null, '请先登录'));
     }
 }
@@ -44,11 +44,21 @@ class CrowllerController {
     @get('/api/getData') 
     @use(checkLogin)
     getData(req: BodyRequest, res: Response) {
-        // const currentCrowllerPageIndex = req.session ? req.session.currentCrowllerPageIndex : undefined;
-        // if(!currentCrowllerPageIndex) {
-        //     req.session.currentCrowllerPageIndex = 1;
-        // }
-        const url = `https://www.tupianzj.com/meinv/yishu/list_178_${1}.html` // 要爬取网站的URL
+        const currentCrowllerPageIndex = req.session ? req.session.currentCrowllerPageIndex : undefined;
+        if(currentCrowllerPageIndex) {
+            if(req.session) {
+                console.log('啊啊')
+                req.session.currentCrowllerPageIndex += 1;
+            }
+        }else {
+            console.log('aaa')
+            if(req.session) {
+                console.log('绿卡啊')
+                req.session.currentCrowllerPageIndex = 1;
+            }
+        }
+        console.log(currentCrowllerPageIndex)
+        const url = `https://www.tupianzj.com/meinv/yishu/list_178_${currentCrowllerPageIndex}.html` // 要爬取网站的URL
         const analyzer = Analyzer.getInstance();
         new Crowller(url, analyzer);
         res.json(getResponseData<boolean>(true));

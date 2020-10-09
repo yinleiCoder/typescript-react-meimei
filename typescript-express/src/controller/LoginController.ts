@@ -12,7 +12,6 @@ interface BodyRequest extends Request {
 @controller
 class LoginController {
 
-
     @get('/')
     home(req: BodyRequest, res: Response) {
         const isLogin = req.session ? req.session.login : undefined;
