@@ -29,3 +29,16 @@
 
 ## created by: 尹磊:boy:
 
+### 效果图：
+
+![1](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\1.png)
+
+![2](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\2.png)
+
+![3](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\3.png)
+
+![4](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\4.png)
+
+# 运行方法：
+
+克隆项目到本地，先yarn安装依赖，然后进入后端文件夹yarn dev启动后端，最后进入react前端文件夹yarn start启动前端即可。

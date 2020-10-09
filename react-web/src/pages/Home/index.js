@@ -92,7 +92,9 @@ const Home = (props) => {
             {
                 meimeiImgList.map((imgSrc, index) => {
                     return (
-                        <Col className="gutter-row" xs={12} sm={12} md={12} lg={6} xl={6}>
+                        <Col 
+                        key={imgSrc}
+                        className="gutter-row" xs={12} sm={12} md={12} lg={6} xl={6}>
                         <div  className="meimei-container">
                             <img className="meimei-img" src={imgSrc}/>
                         </div>
