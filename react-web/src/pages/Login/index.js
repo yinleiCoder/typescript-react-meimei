@@ -11,9 +11,9 @@ function Login() {
     const [isLogin, setIsLogin] = useState(false);
 
     useEffect(()=> {
-        if(localStorage.getItem('islogin')) {
-            setIsLogin(true);
-        }
+        // if(localStorage.getItem('islogin')) {
+        //     setIsLogin(true);
+        // }
         message.info('不要搞黄色哦!');
         return () => {
             message.info('欢迎观众老爷观看！！!');

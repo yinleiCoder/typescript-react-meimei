@@ -44,18 +44,18 @@ class CrowllerController {
     @get('/api/getData') 
     @use(checkLogin)
     getData(req: BodyRequest, res: Response) {
-        const currentCrowllerPageIndex = req.session ? req.session.currentCrowllerPageIndex : undefined;
+        let currentCrowllerPageIndex = req.session ? req.session.currentCrowllerPageIndex : undefined;
         if(currentCrowllerPageIndex) {
             if(req.session) {
-                console.log('啊啊')
                 req.session.currentCrowllerPageIndex += 1;
             }
         }else {
-            console.log('aaa')
             if(req.session) {
-                console.log('绿卡啊')
                 req.session.currentCrowllerPageIndex = 1;
             }
+        }
+        if(currentCrowllerPageIndex%136===0) {
+            currentCrowllerPageIndex = 1;
         }
         console.log(currentCrowllerPageIndex)
         const url = `https://www.tupianzj.com/meinv/yishu/list_178_${currentCrowllerPageIndex}.html` // 要爬取网站的URL

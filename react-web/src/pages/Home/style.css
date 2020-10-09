@@ -1,0 +1,17 @@
+.meimei-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meimei-container .meimei-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    transition: all 1s ease;
+}
+
+.meimei-container .meimei-img:hover{
+    transform: translateY(-22px);
+    box-shadow: 10px 8px 5px rgba(26, 188, 156,.4);
+}

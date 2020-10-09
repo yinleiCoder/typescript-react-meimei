@@ -4,9 +4,11 @@ import tslogo from './typescript.svg';
 import './App.css';
 import { Route, HashRouter, Switch } from "react-router-dom";
 import { Row, Col, Divider } from 'antd';
+import { Provider } from 'react-redux';
 
 import LoginPage from "./pages/Login/index";
 import HomePage from "./pages/Home/index";
+import store from './store/index';
 
 function App() {
   return (
@@ -19,14 +21,15 @@ function App() {
           <img src={tslogo} className="App-logo" alt="logo" />
         </Col>
       </Row>
-
-      <HashRouter>
-        <Switch>
-          <Route path="/" exact component={HomePage}></Route>
-          <Route path="/login" exact component={LoginPage}></Route>
-        </Switch>
-      </HashRouter>
       
+      <Provider store={store}>
+        <HashRouter>
+          <Switch>
+            <Route path="/" exact component={HomePage}></Route>
+            <Route path="/login" exact component={LoginPage}></Route>
+          </Switch>
+        </HashRouter>
+      </Provider>
     </div>
   );
 }
