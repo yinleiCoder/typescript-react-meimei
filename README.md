@@ -39,6 +39,10 @@
 
 ![4](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\4.png)
 
+网页截屏技巧：
+1.在要截图的网页，按下F12，进入开发者工具
+2.按下Ctrl + Shift + P
+3.输入Capture full size screenshot指令（可以只输入几个字符），按下回车键，就ok了
 # 运行方法：
 
 克隆项目到本地，先yarn安装依赖，然后进入后端文件夹yarn dev启动后端，最后进入react前端文件夹yarn start启动前端即可。
