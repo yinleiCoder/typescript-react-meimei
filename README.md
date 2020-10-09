@@ -31,13 +31,13 @@
 
 ### 效果图：
 
-![1](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\1.png)
+![1](https://github.com/yinleiCoder/typescript-react-meimei/blob/main/doc/1.png)
 
-![2](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\2.png)
+![2](https://github.com/yinleiCoder/typescript-react-meimei/blob/main/doc/2.png)
 
-![3](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\3.png)
+![3](https://github.com/yinleiCoder/typescript-react-meimei/blob/main/doc/3.png)
 
-![4](E:\VisualStudioCodeProjects\typescript-react-meimei\doc\4.png)
+![4](https://github.com/yinleiCoder/typescript-react-meimei/blob/main/doc/4.png)
 
 网页截屏技巧：
 1.在要截图的网页，按下F12，进入开发者工具
