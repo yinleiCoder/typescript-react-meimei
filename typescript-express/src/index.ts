@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cookieSession from 'cookie-session';
 import router from './router';
 import './controller/CrowllerController';
+import './controller/LoginController';
 
 
 // express 作为后端

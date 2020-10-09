@@ -42,7 +42,7 @@ const checkLogin = (req: Request, res: Response, next: NextFunction) => {
 class CrowllerController {
     
     @get('/api/getData') 
-    // @use(checkLogin)
+    @use(checkLogin)
     getData(req: BodyRequest, res: Response) {
         // const currentCrowllerPageIndex = req.session ? req.session.currentCrowllerPageIndex : undefined;
         // if(!currentCrowllerPageIndex) {
@@ -55,7 +55,7 @@ class CrowllerController {
     }
 
     @get('/api/showData')
-    // @use(checkLogin)
+    @use(checkLogin)
     showData(req: BodyRequest, res: Response) {
         try {
             const position = path.resolve(__dirname, '../../data/meimei.json');
